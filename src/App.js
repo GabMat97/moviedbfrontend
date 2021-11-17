@@ -1,15 +1,12 @@
-import React, { Component } from 'react';
-import Contacts from './Contacts.js';
+import './App.css';
+import Table from './TableComponent.js'
 
-class App extends Component {
+ function App() {
+   return (
+     <div className="App">
+       <Table />
+     </div>
+   );
+ }
 
-render() {
-    return (
-        <div>
-            <Contacts />
-        </div>
-        );
-    }
-}
-
-export default App;
+ export default App;
