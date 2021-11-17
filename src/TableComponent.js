@@ -34,10 +34,10 @@ class Table extends Component {
                 <td>{film.film_id}</td>
                 <td>{film.title}</td>
                 <td>{film.description}</td>
-                <td>film.release_yr</td>
-                <td>film.language_id</td>
-                <td>film.duration</td>
-                <td>film.rating</td>
+                <td>{film.release_yr}</td>
+                <td>{film.language_id}</td>
+                <td>{film.duration}</td>
+                <td>{film.rating}</td>
                 </tr>
             )
         })
