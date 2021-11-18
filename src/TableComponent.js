@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './App.css'
 
 class Table extends Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class Table extends Component {
     async componentDidMount() {
         this.setState({isLoading:true})
 
-        const response = await fetch('http://localhost:8080/moviesDB/movies')
+        const response = await fetch('3.133.129.178:8080/moviesDB/movies')
 
         if(response.ok) {
             const films = await response.json()
@@ -30,7 +31,7 @@ class Table extends Component {
     renderTableRows = () => {
         return this.state.films.map(film => {
             return (
-                <tr key={film.id}>
+                <tr key={film.id} id="content">
                 <td>{film.film_id}</td>
                 <td>{film.title}</td>
                 <td>{film.description}</td>
@@ -55,7 +56,7 @@ class Table extends Component {
         }
         return films.length > 0
         ? (
-            <table>
+            <table className="table-layout">
                 <thead>
                     <tr>
                         {this.renderTableHeader()}
