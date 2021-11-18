@@ -5,7 +5,7 @@ function Contacts() {
     const [message, setMessage] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:8080/moviesDB/movies').then(res=>{
+        fetch('http://3.133.129.178:8080/moviesDB/movies').then(res=>{
             return res.json()}).then(data=>{
             const newData = Object.values(data)
             setMessage(newData)
