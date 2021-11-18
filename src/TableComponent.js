@@ -14,7 +14,7 @@ class Table extends Component {
     async componentDidMount() {
         this.setState({isLoading:true})
 
-        const response = await fetch('3.133.129.178:8080/moviesDB/movies')
+        const response = await fetch('http://3.133.129.178:8080/moviesDB/movies')
 
         if(response.ok) {
             const films = await response.json()
