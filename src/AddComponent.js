@@ -14,7 +14,7 @@ class Table extends Component {
     }
 
     render() {
-        const{films, isLoading, isError} = this.state
+
     }
 }
 
