@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
+document.body.style.background = "orange";
+
 class FilmItem extends React.Component {
   render() {
     const film = this.props.film;
@@ -408,6 +410,7 @@ class FilmDatabase extends React.Component {
       <div>
         <div>
           <h1>Film Database</h1>
+          <img src="https://c.tenor.com/J_6Rv7jZ5K4AAAAC/cinema-321.gif" />
           <div />
           <div className="Header">
             <h2>Search for Film</h2>
