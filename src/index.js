@@ -181,6 +181,91 @@ class FilmEntry extends React.Component {
   }
 }
 
+class UpdateFilm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      UpdateFilmID: "",
+      UpdateDescription: "",
+    };
+
+    this.handleUpdateFilmID = this.handleUpdateFilmID.bind(this);
+    this.handleUpdateDescription = this.handleUpdateDescription.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  
+
+    
+  }
+
+  updateFunction() {
+    const film_id = this.state.UpdateFilmID;
+    const description = this.state.UpdateDescription;
+    const updateOptions = {
+      method: "PUT",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        film_id: film_id,
+        description: description,
+      
+      }),
+    }
+
+    fetch("http://localhost:8080/moviesDB/updatefilm/" + film_id, updateOptions)
+    .then(() => this.setState({ status: "Update Description Successful" }));
+  }
+
+  handleUpdateDescription(event) {
+    this.setState({
+      UpdateDescription: event.target.value,
+    });
+  }
+
+  handleUpdateFilmID(event) {
+    this.setState({ 
+      UpdateFilmID: event.target.value,
+    });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    this.updateFunction();
+    alert("Your film's description was successfully updated");
+  }
+
+  
+
+  render() {
+    return (
+      <div className="text-center">
+        <form
+          onSubmit={(event) => {
+            this.handleSubmit(event);
+          }}
+        >
+          <label>
+            <input
+              type="text"
+              placeholder="Enter Film ID"
+              value={this.state.UpdateFilmID}
+              onChange={this.handleUpdateFilmID}
+            />
+            <input
+              type="text"
+              placeholder="Enter New Description"
+              value={this.state.UpdateDescription}
+              onChange={this.handleUpdateDescription}
+            />
+          </label>
+          <input type="submit" value="Update Film" />
+        </form>
+      </div>
+    );
+  }
+}
+
 class RemoveFilm extends React.Component {
   constructor(props) {
     super(props);
@@ -317,7 +402,7 @@ class FilmDatabase extends React.Component {
   render() {
     const renderRows = [];
     this.state.rows.forEach((film) => {
-      renderRows.push(<FilmItem film={film} key={film.movie_id} />);
+      renderRows.push(<FilmItem film={film} key={film.film_id} />);
     });
     return (
       <div>
@@ -341,6 +426,12 @@ class FilmDatabase extends React.Component {
             <FilmEntry />
           </div>
           <br />
+          <div>
+            <h2>Update Film Description </h2>
+          </div>
+          <div>
+            <UpdateFilm className="UpdateFilm" />
+          </div>
           <div>
             <h2>Remove Film from Database </h2>
           </div>
