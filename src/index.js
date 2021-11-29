@@ -117,7 +117,7 @@ class FilmEntry extends React.Component {
       }),
     };
 
-    fetch("http://localhost:8080/moviesDB/addfilm", requestOptions).then(
+    fetch("3.133.129.178:8080/moviesDB/addfilm", requestOptions).then(
       (response) => response.json()
     );
   }
@@ -215,7 +215,7 @@ class UpdateFilm extends React.Component {
       }),
     }
 
-    fetch("http://localhost:8080/moviesDB/updatefilm/" + film_id, updateOptions)
+    fetch("3.133.129.178:8080/moviesDB/updatefilm/" + film_id, updateOptions)
     .then(() => this.setState({ status: "Update Description Successful" }));
   }
 
@@ -282,7 +282,7 @@ class RemoveFilm extends React.Component {
   deleteFunction() {
     const film_id = this.state.DeleteFilm;
 
-    fetch("http://localhost:8080/moviesDB/deletefilm/" + film_id, {
+    fetch("3.133.129.178:8080/moviesDB/deletefilm/" + film_id, {
       method: "DELETE",
     }).then(() => this.setState({ status: "Delete Successful" }));
   }
@@ -366,7 +366,7 @@ class FilmDatabase extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:8080/moviesDB/movies")
+    fetch("3.133.129.178:8080/moviesDB/movies")
       .then((response) => response.json())
       .then((jsonData) => {
         const filminfo = jsonData;
