@@ -22,7 +22,8 @@ class FilmDatabaseApp extends React.Component {
   }
 
   componentDidMount() {
-    fetch("3.133.129.178:8080/moviesDB/movies")
+    // const filminfo = [{title: 'gabe'}]
+    fetch("http://localhost:8080/moviesDB/movies")
       .then((response) => response.json())
       .then((jsonData) => {
         console.log(jsonData);
@@ -30,7 +31,13 @@ class FilmDatabaseApp extends React.Component {
         this.setState({
           rows: filminfo,
         });
+      })
+      .catch((error)=> {
+        console.log('ERROR: ' + error)
       });
+      // .finally(() => {
+      //   console.log('done')
+      // });
   }
 
 
