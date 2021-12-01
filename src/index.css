@@ -1,10 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
 body {
-  margin: 0;
+  margin: 0 5% 0 5%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  align-content: center;
+}
+
+table {
+  width: 100%;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  align-content: center;
+}
+
+#Submit {
+  width: 10%;
+  background-color: blueviolet;
+  color: white; 
+  border: 2px solid black;
+}
+
+#Submit:hover {
+  background-color: white;
+  color: black;
+}
+
+.FilmDatabase{
+  width: 100%;
+}
+
+.SearchBarWrapper{
+  width: 100%;
+}
+
+.SearchBar{
+  /* border: 1px solid grey; */
+  border-radius: 5px;
+  width: 90%;
+  /* outline: 0; */
+  /* background-color: #f5f5f5; */
+}
+
+.Modal{
+  display: none; 
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%; /* Could be more or less, depending on screen size */
+}
+
+.Cancel{
+  background-color: red !important;
+}
+
+.Title{
+  background-color: blueviolet;
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.rowItem {
+  margin: 1% 1% 1% 1%;
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  padding-top: 12px;
+  margin: 1% 1% 1% 1%;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: blueviolet;
+  color: black;
 }
 
 code {
