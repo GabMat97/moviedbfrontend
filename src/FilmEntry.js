@@ -76,7 +76,7 @@ class FilmEntry extends React.Component {
         }),
       };
   
-      fetch("localhost:8080/moviesDB/addfilm", requestOptions).then(
+      fetch("http://3.133.129.178:8080/moviesDB/addfilm", requestOptions).then(
         (response) => response.json()
       );
     }

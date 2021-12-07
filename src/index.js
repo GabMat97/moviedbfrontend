@@ -23,7 +23,7 @@ class FilmDatabaseApp extends React.Component {
 
   componentDidMount() {
     // const filminfo = [{title: 'gabe'}]
-    fetch("http://localhost:8080/moviesDB/movies")
+    fetch("http://3.133.129.178:8080/moviesDB/movies")
       .then((response) => response.json())
       .then((jsonData) => {
         console.log(jsonData);
