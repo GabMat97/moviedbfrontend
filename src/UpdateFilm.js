@@ -28,7 +28,7 @@ class UpdateFilm extends React.Component {
         }),
       }
   
-      fetch("http://3.133.129.178:8080/moviesDB/updatefilm/" + film_id + "/?description=" + description, updateOptions)
+      fetch("http://3.144.121.120:8080/moviesDB/updatefilm/" + film_id + "/?description=" + description, updateOptions)
       .then(() => this.setState({ status: "Update Description Successful" }));
     }
   
