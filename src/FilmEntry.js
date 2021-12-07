@@ -54,7 +54,7 @@ class FilmEntry extends React.Component {
       
       const title = this.state.AddTitle;
       const description = this.state.AddDescription;
-      const release_year = this.state.AddReleaseYear;
+      const release_yr = this.state.AddReleaseYear;
       const language_id = this.state.AddLanguageID;
       const duration = this.state.AddDuration;
       const rating = this.state.AddRating;
@@ -69,7 +69,7 @@ class FilmEntry extends React.Component {
           // film_id: film_id,
           title: title,
           description: description,
-          release_year: release_year,
+          release_yr: release_yr,
           language_id: language_id,
           duration: duration,
           rating: rating
@@ -99,7 +99,8 @@ class FilmEntry extends React.Component {
                   />
                 </td>
                 <td className="rowItem">
-                  <textarea
+                  <input
+                    type='text'
                     placeholder="Enter Film Description"
                     value={this.state.AddDescription}
                     onChange={this.handleChangeDescription}

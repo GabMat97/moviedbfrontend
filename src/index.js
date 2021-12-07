@@ -33,13 +33,10 @@ class FilmDatabaseApp extends React.Component {
         });
       })
       .catch((error)=> {
-        console.log('ERROR: ' + error)
+        
       });
-      // .finally(() => {
-      //   console.log('done')
-      // });
+      
   }
-
 
   handleFiltertextChange(filterText) {
     this.setState({
@@ -99,13 +96,13 @@ class FilmDatabaseApp extends React.Component {
               handleClick={this.handleClick}
             />
           </div>
+          <FilmEntry />
           <br />
           <FilmList
             movies={this.state.rows}
             filterText={this.state.filterText}
             rows={renderRows}
           />
-          <FilmEntry />
           <br />
           <Modal
             ref={this.modalRef}

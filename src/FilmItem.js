@@ -6,9 +6,6 @@ class FilmItem extends React.Component {
       const film = this.props.film;
       return (
         <tr className="row">
-          {/* <td className="rowItem">
-            {film.film_id}
-          </td> */}
           <td className="rowItem">
             {film.title}
           </td>
@@ -16,7 +13,7 @@ class FilmItem extends React.Component {
             {film.description}
           </td>
           <td className="rowItem">
-            {film.release_year}
+            {film.release_yr}
           </td>
           <td className="rowItem">
             {film.language_id}

@@ -13,9 +13,9 @@ class RemoveFilm extends React.Component {
   }
 
   deleteFunction() {
-    const film_id = this.state.DeleteFilm;
+    const film_id = this.props.film.film_id;
 
-    fetch("localhost:8080/moviesDB/deletefilm/" + film_id, {
+    fetch("http://localhost:8080/moviesDB/deletefilm/" + film_id, {
       method: "DELETE",
     }).then(() => this.setState({ status: "Delete Successful" }));
   }

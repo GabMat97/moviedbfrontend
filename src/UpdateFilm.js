@@ -4,17 +4,16 @@ class UpdateFilm extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        UpdateFilmID: this.props.filmId,
+        UpdateFilmID: this.props.film_id,
         UpdateDescription: "",
       };
-  
       this.handleUpdateFilmID = this.handleUpdateFilmID.bind(this);
       this.handleUpdateDescription = this.handleUpdateDescription.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
     }
   
     updateFunction() {
-      const film_id = this.state.UpdateFilmID;
+      const film_id = this.props.film.film_id;
       const description = this.state.UpdateDescription;
       const updateOptions = {
         method: "PUT",
@@ -29,7 +28,7 @@ class UpdateFilm extends React.Component {
         }),
       }
   
-      fetch("localhost:8080/moviesDB/updatefilm/" + film_id, updateOptions)
+      fetch("http://localhost:8080/moviesDB/updatefilm/" + film_id + "/?description=" + description, updateOptions)
       .then(() => this.setState({ status: "Update Description Successful" }));
     }
   
